@@ -1,0 +1,7 @@
+[build]
+builder = "nixpacks"
+buildCommand = "cd api && npm install"
+
+[deploy]
+startCommand = "cd api && npm start"
+restartPolicyType = "always"
