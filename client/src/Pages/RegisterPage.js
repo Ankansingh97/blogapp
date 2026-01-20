@@ -9,11 +9,14 @@ export default function RegisterPage() {
     e.preventDefault();
     setIsLoading(true);
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/register`, {
-        method: "POST",
-        body: JSON.stringify({ username, password }),
-        headers: { "Content-Type": "application/json" },
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_API_URL}/register`,
+        {
+          method: "POST",
+          body: JSON.stringify({ username, password }),
+          headers: { "Content-Type": "application/json" },
+        },
+      );
       if (response.status === 200) {
         alert("✅ Registration successful! Please login now.");
         SetUsername("");
