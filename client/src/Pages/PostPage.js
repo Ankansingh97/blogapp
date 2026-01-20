@@ -10,7 +10,7 @@ export default function PostPage() {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:4000/post/${id}`)
+    fetch(`${process.env.REACT_APP_API_URL}/post/${id}`)
       .then((response) => response.json())
       .then((postInfo) => {
         setPostInfo(postInfo);
@@ -42,7 +42,7 @@ export default function PostPage() {
 
       <div className="post-image-wrapper">
         <img
-          src={`http://localhost:4000/${postInfo.cover}`}
+          src={`${process.env.REACT_APP_API_URL}/${postInfo.cover}`}
           alt={postInfo.title}
           loading="lazy"
         />
